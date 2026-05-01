@@ -389,6 +389,25 @@ function toggleMusic(){
 }
 </script>
 
+<audio id="bgm" loop>
+  <source src="bgm.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function toggleMusic(){
+  const a = document.getElementById('bgm');
+
+  if(a.paused){
+    a.muted = false;
+    a.play().catch(() => {
+      alert("한 번 더 눌러");
+    });
+  } else {
+    a.pause();
+  }
+}
+</script>
+  
 </body>
 </html>
 
